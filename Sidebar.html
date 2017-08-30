@@ -3,28 +3,56 @@
 
 <!-- Below is the HTML code that defines the sidebar element structure. -->
 <div class="sidebar branding-below">
-  <p id="selected">
-  
-  </p>
-  
-  <hr/>
-  
-  <div>
-  <h4>Results from Zooma</h4>
-  
-  <div id="zooma-result">
-  </div>
-  
-  </div>
-  
-  <div>
-  
-  <h4>Results from Agroportal</h4>
-  
-  <div id="agroportal-result"></div>
-  </div>
-</div>
+    <div>
+        <div id="faang-rule">
+            <span class="rule-heading">Attribute type:</span> <span id="rule-name"></span>
+            <br/>
+            <span class="rule-heading">Description:</span> <span id="rule-description"></span>
+            <br/>
+            <span class="rule-heading">Input type:</span> <span id="rule-type"></span>
+            <br/>
+            <span class="rule-heading">Mandatory:</span> <span id="rule-mandatory"></span>
+            <br/>
+<!--
+            <div id="mappings">
+               <h4>Mappings</h4>
+               
+               <span class="rule-heading">Cell value:</span><span id="mapping-cell-value"></span>
+               <span class="rule-heading">Ontology term:</span><span id="mapping-ontology-term"></span>
+               <span class="rule-heading">Confidence:</span><span id="mapping-conf"></span>
+               <span class="rule-heading">Source:</span><span id="mapping-source"></span>
+               
+            </div>
+-->
+            <h4>Search for ontology terms</h4>
 
+            <div id="valid-terms">
+
+
+            </div>
+
+            <div id="ols-search">
+                <div class="form-group" >
+                    <button style="float:right;" id="search-button" class="action" onclick="doOlsSearch();">Search</button>
+                    <div style="overflow: hidden; padding-right: .5em;">
+                        <input style="width:100%;height:28px;" type="text" id="search-box" name="query" placeholder="Enter a search term..." class="queryString"/>
+                    </div>
+                </div>
+
+                <!-- search results -->
+                <div id="search" class="block">
+                    <div class="searchresults">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
 
 <!-- Use a templated HTML printing scriptlet to import JavaScript. -->
 <?!= HtmlService.createHtmlOutputFromFile('SidebarJavaScript').getContent(); ?>
